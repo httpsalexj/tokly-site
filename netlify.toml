@@ -1,0 +1,23 @@
+[[redirects]]
+  from = "/termos"
+  to = "/terms"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/termos/*"
+  to = "/terms/:splat"
+  status = 301
+  force = true
+
+  [[redirects]]
+  from = "/privacidade"
+  to = "/privacy"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/privacidade/*"
+  to = "/privacy/:splat"
+  status = 301
+  force = true
