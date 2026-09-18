@@ -1,408 +1,70 @@
 <!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Política de Privacidade do Tokly — Bot de download de vídeos do TikTok no Telegram." />
-  <title>Política de Privacidade — Tokly</title>
-
-  <style>
-    :root{
-      --bg: #070A12;
-      --text:#EAF0FF;
-      --muted: rgba(234,240,255,.72);
-      --muted2: rgba(234,240,255,.58);
-      --line: rgba(255,255,255,.10);
-      --card: rgba(255,255,255,.06);
-      --card2: rgba(255,255,255,.10);
-      --accent1:#31D3FF;
-      --accent2:#8B5CFF;
-      --ok:#32D583;
-      --warn:#FEC84B;
-
-      --radius: 18px;
-      --shadow: 0 18px 60px rgba(0,0,0,.45);
-      --max: 1080px;
-    }
-
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      background:
-        radial-gradient(1200px 800px at 15% 10%, rgba(49,211,255,.18), transparent 60%),
-        radial-gradient(900px 650px at 80% 20%, rgba(139,92,255,.20), transparent 55%),
-        radial-gradient(900px 650px at 50% 110%, rgba(49,211,255,.12), transparent 55%),
-        linear-gradient(180deg, var(--bg) 0%, #050712 100%);
-      color:var(--text);
-      line-height:1.55;
-    }
-
-    a{color:inherit}
-    .wrap{max-width:var(--max); margin:0 auto; padding:24px}
-
-    .topbar{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:16px; padding:14px 0;
-    }
-    .brand{display:flex; align-items:center; gap:12px; font-weight:850; letter-spacing:.2px}
-    .logo{
-      width:38px; height:38px; border-radius:14px;
-      background:
-        radial-gradient(14px 14px at 30% 30%, rgba(255,255,255,.35), transparent 55%),
-        linear-gradient(135deg, var(--accent1) 0%, var(--accent2) 70%);
-      box-shadow: 0 12px 30px rgba(49,211,255,.16);
-      position:relative; overflow:hidden;
-    }
-    .logo::after{
-      content:"";
-      position:absolute; inset:-2px;
-      background: radial-gradient(120px 60px at 40% 0%, rgba(255,255,255,.25), transparent 55%);
-      transform: rotate(-8deg);
-    }
-
-    .tag{
-      font-size:12px; color:var(--muted);
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.04);
-      padding:6px 10px;
-      border-radius:999px;
-      white-space:nowrap;
-    }
-
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:10px 14px;
-      border:1px solid var(--line);
-      border-radius:999px;
-      background:rgba(255,255,255,.04);
-      color:var(--text);
-      font-weight:700;
-      font-size:13px;
-      text-decoration:none;
-      transition: transform .15s ease, background .15s ease, border-color .15s ease;
-    }
-    .btn:hover{transform: translateY(-1px); background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.16)}
-    .btn.primary{
-      border-color: transparent;
-      background: linear-gradient(135deg, rgba(49,211,255,.95), rgba(139,92,255,.92));
-      color:#061021;
-      box-shadow: 0 14px 40px rgba(139,92,255,.18);
-    }
-
-    .hero{
-      margin-top:18px;
-      border:1px solid var(--line);
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03)),
-        radial-gradient(900px 400px at 12% 0%, rgba(49,211,255,.20), transparent 55%),
-        radial-gradient(900px 400px at 88% 0%, rgba(139,92,255,.22), transparent 55%);
-      border-radius: calc(var(--radius) + 8px);
-      box-shadow: var(--shadow);
-      overflow:hidden;
-    }
-    .hero-inner{padding:34px 28px 26px}
-
-    .kicker{
-      display:inline-flex; gap:10px; align-items:center;
-      font-size:12px; font-weight:800;
-      color:rgba(234,240,255,.85);
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(0,0,0,.15);
-      padding:8px 12px;
-      border-radius:999px;
-    }
-    .kicker i{
-      width:9px; height:9px; border-radius:999px;
-      background: linear-gradient(135deg, var(--accent1), var(--accent2));
-      box-shadow: 0 0 18px rgba(49,211,255,.35);
-      display:inline-block;
-    }
-
-    h1{margin:14px 0 10px; font-size:34px; line-height:1.08; letter-spacing:-.6px}
-    .sub{color:var(--muted); margin:0; max-width:75ch; font-size:14.5px}
-
-    .meta{
-      margin-top:16px;
-      display:flex; flex-wrap:wrap; gap:10px;
-      color:var(--muted2);
-      font-size:12.5px;
-    }
-    .chip{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:8px 10px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.035);
-    }
-    .chip b{color:rgba(234,240,255,.9); font-weight:800}
-    .dot{width:7px; height:7px; border-radius:99px; background:rgba(255,255,255,.25)}
-    .dot.ok{background: var(--ok)}
-    .dot.warn{background: var(--warn)}
-
-    .grid{
-      margin-top:18px;
-      display:grid;
-      grid-template-columns: 1.25fr .75fr;
-      gap:16px;
-    }
-
-    .card{
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.04);
-      border-radius: var(--radius);
-      box-shadow: 0 10px 30px rgba(0,0,0,.22);
-      overflow:hidden;
-    }
-    .card .head{
-      padding:16px 18px;
-      border-bottom:1px solid var(--line);
-      display:flex; align-items:center; justify-content:space-between;
-      gap:12px;
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
-    }
-    .card .head h2{
-      margin:0;
-      font-size:14px;
-      letter-spacing:.2px;
-      font-weight:850;
-    }
-    .card .body{padding:18px}
-    .card p{margin:0 0 12px; color:var(--muted); font-size:14px}
-    .card p:last-child{margin-bottom:0}
-    .card ul{margin:10px 0 0; padding-left:18px; color:var(--muted); font-size:14px}
-    .card li{margin:6px 0}
-
-    .toc a{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:12px 14px;
-      border:1px solid var(--line);
-      border-radius: 14px;
-      background: rgba(255,255,255,.03);
-      margin-bottom:10px;
-      color:rgba(234,240,255,.92);
-      font-weight:780;
-      font-size:13.5px;
-      text-decoration:none;
-      transition: transform .15s ease, background .15s ease, border-color .15s ease;
-    }
-    .toc a:hover{transform: translateY(-1px); background: rgba(255,255,255,.05); border-color: rgba(255,255,255,.16)}
-    .toc small{color:var(--muted2); font-weight:700}
-
-    .section{scroll-margin-top: 18px; padding-top: 2px}
-
-    .note{
-      margin-top:12px;
-      padding:12px 14px;
-      border-radius: 14px;
-      border:1px solid rgba(49,211,255,.22);
-      background: rgba(49,211,255,.07);
-      color: rgba(234,240,255,.82);
-      font-size: 13.5px;
-    }
-
-    .footer{
-      margin-top:18px;
-      padding:18px 0 10px;
-      color: var(--muted2);
-      font-size: 12.5px;
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      justify-content:space-between;
-      align-items:center;
-      border-top:1px solid rgba(255,255,255,.08);
-    }
-    .footer a{opacity:.9; text-decoration:underline; text-decoration-color: rgba(255,255,255,.22); color:inherit}
-    .footer a:hover{opacity:1}
-
-    @media (max-width: 920px){
-      .grid{grid-template-columns: 1fr}
-      h1{font-size:30px}
-      .hero-inner{padding:28px 20px 22px}
-    }
-  </style>
-</head>
-
-<body>
-  <div class="wrap">
-    <header class="topbar">
-      <div class="brand" aria-label="Tokly">
-        <div class="logo" aria-hidden="true"></div>
-        <div>
-          <span>Tokly</span><br/>
-          <span style="font-size:12px;color:var(--muted2)">Política de Privacidade</span>
-        </div>
-      </div>
-
-      <div style="display:flex; gap:10px; align-items:center">
-        <span class="tag">Telegram • TikTok Downloader</span>
-        <a class="btn" href="/">Início</a>
-        <a class="btn" href="/terms">Termos</a>
-        <a class="btn primary" href="#direitos">LGPD</a>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#08111f">
+    <meta name="description" content="Entenda quais dados o Tokly usa para operar o bot, por quanto tempo são mantidos e como exercer seus direitos de privacidade.">
+    <meta name="robots" content="index, follow">
+    <title>Política de Privacidade — Tokly</title>
+    <link rel="canonical" href="https://toklybot.netlify.app/privacy/">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="../site.webmanifest">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="Tokly">
+    <meta property="og:title" content="Política de Privacidade — Tokly">
+    <meta property="og:description" content="Dados operacionais, retenção e direitos de privacidade no Tokly.">
+    <meta property="og:url" content="https://toklybot.netlify.app/privacy/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Política de Privacidade — Tokly">
+    <meta name="twitter:description" content="Como o Tokly trata dados para entregar o serviço pelo Telegram.">
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <div class="page-glow" aria-hidden="true"></div>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="../" aria-label="Tokly, página inicial">
+          <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M12.3 10.1 9.7 12.7a5.2 5.2 0 0 0 7.4 7.4l2.6-2.6m.1-3.6 2.5-2.5a5.2 5.2 0 0 0-7.4-7.4l-2.5 2.5m-2.5 9.3 12.2-12.2"/></svg>
+          <span>tokly</span>
+        </a>
+        <nav class="legal-nav" aria-label="Páginas institucionais"><a href="../">Início</a><a href="../terms/">Termos</a></nav>
+        <a class="button button-small" href="https://t.me/toklyappbot" target="_blank" rel="noopener noreferrer">Abrir bot <span aria-hidden="true">↗</span></a>
       </div>
     </header>
 
-    <section class="hero">
-      <div class="hero-inner">
-        <div class="kicker"><i></i> Segurança • Transparência • Conformidade</div>
-        <h1>Política de Privacidade — Tokly</h1>
-        <p class="sub">
-          O Tokly é um bot no Telegram que processa links públicos do TikTok enviados voluntariamente pelo usuário
-          para realizar downloads de mídia. Esta política descreve como tratamos informações, em conformidade com a
-          <b>Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018)</b>.
-        </p>
+    <main id="conteudo" class="legal-shell">
+      <p class="eyebrow">Transparência por padrão</p>
+      <h1>Política de Privacidade</h1>
+      <p class="legal-intro">Esta política explica, em linguagem direta, como os dados necessários para operar o site e o bot Tokly são tratados.</p>
+      <p class="legal-updated">Última atualização: <time datetime="2026-09-18">18 de setembro de 2026</time>.</p>
 
-        <div class="meta" role="list">
-          <div class="chip" role="listitem"><span class="dot ok"></span> <b>Sem venda de dados</b></div>
-          <div class="chip" role="listitem"><span class="dot ok"></span> <b>Sem marketing</b></div>
-          <div class="chip" role="listitem"><span class="dot warn"></span> <b>Logs técnicos temporários</b></div>
-          <div class="chip" role="listitem">Última atualização: <b>Março/2026</b></div>
-        </div>
-      </div>
-    </section>
+      <nav class="legal-index" aria-label="Nesta política">
+        <strong>Nesta página</strong>
+        <a href="#site">Site</a><a href="#dados">Dados do bot</a><a href="#finalidades">Finalidades</a><a href="#retencao">Retenção</a><a href="#direitos">Seus direitos</a><a href="#contato">Contato</a>
+      </nav>
 
-    <div class="grid">
-      <main class="card" aria-label="Conteúdo da política">
-        <div class="head">
-          <h2>Conteúdo</h2>
-          <span class="tag">Tokly — Download. Pronto.</span>
-        </div>
+      <section id="site"><h2>1. Privacidade no site</h2><p>Este site institucional não usa analytics, pixels de rastreamento, formulários, contas, cookies ou armazenamento local. A hospedagem pode gerar registros técnicos essenciais, como endereço IP, horário, navegador e recurso acessado, para segurança e entrega da página.</p></section>
 
-        <div class="body">
-          <section id="escopo" class="section">
-            <h3 style="margin:0 0 8px;font-size:16px;letter-spacing:.1px">1. Escopo</h3>
-            <p>
-              Esta Política se aplica ao uso do Tokly no Telegram. Ao utilizar o bot, você declara ciência e concordância
-              com os termos aqui descritos.
-            </p>
-          </section>
+      <section id="dados"><h2>2. Dados usados pelo bot</h2><p>Durante o atendimento, o bot processa temporariamente o ID técnico do pedido e o link enviado para preparar a entrega. Os <strong>registros persistentes ficam limitados</strong> aos dados operacionais aprovados:</p><ul><li><strong>ID numérico do Telegram</strong>;</li><li><strong>formato solicitado</strong> e <strong>data de uso</strong>;</li><li><strong>contadores de cota</strong> e bloqueios administrativos;</li><li>resultados agregados, códigos seguros de falha e <strong>logs técnicos</strong> sem conteúdo desnecessário, usados para diagnosticar erros e proteger o serviço.</li></ul><p>Não solicitamos senha do TikTok ou do Telegram, dados bancários, documentos ou cadastro no site.</p></section>
 
-          <section id="dados" class="section">
-            <h3 style="margin:18px 0 8px;font-size:16px;letter-spacing:.1px">2. Dados tratados</h3>
-            <p>O Tokly pode tratar as seguintes informações, de forma limitada ao necessário:</p>
-            <ul>
-              <li><b>Identificadores do Telegram</b> (ex.: ID do usuário e nome de usuário), fornecidos pela plataforma.</li>
-              <li><b>Links</b> enviados voluntariamente pelo usuário para processamento.</li>
-              <li><b>Dados técnicos temporários</b> (ex.: registros de falha e métricas de performance) para estabilidade e segurança.</li>
-            </ul>
-            <div class="note">
-              O Tokly <b>não solicita</b> documentos pessoais, dados sensíveis (LGPD) ou informações além do necessário para operar.
-            </div>
-          </section>
+      <section id="finalidades"><h2>3. Finalidades e bases legais</h2><p>Esses dados são usados para receber e entregar pedidos, aplicar limites, mostrar progresso, permitir cancelamento, reutilizar cache técnico, prevenir abuso, investigar falhas e medir a estabilidade do serviço. O tratamento se apoia na execução do serviço solicitado, no cumprimento de obrigações legais e no legítimo interesse de manter o Tokly seguro e funcional, sempre com avaliação de necessidade e dos seus direitos.</p></section>
 
-          <section id="finalidade" class="section">
-            <h3 style="margin:18px 0 8px;font-size:16px;letter-spacing:.1px">3. Finalidade do tratamento</h3>
-            <p>Tratamos dados exclusivamente para:</p>
-            <ul>
-              <li>Processar o link enviado e entregar o arquivo solicitado;</li>
-              <li>Prevenir abuso, fraudes e uso indevido (segurança e integridade do serviço);</li>
-              <li>Diagnosticar erros e manter a estabilidade do bot.</li>
-            </ul>
-          </section>
+      <section id="retencao"><h2>4. Conteúdo temporário, cache e retenção</h2><p><strong>Links enviados e arquivos ou mídia processados temporariamente não integram o histórico permanente do bot.</strong> Arquivos intermediários são descartados após o processamento ou quando deixam de ser necessários. Por prazo limitado, o cache técnico guarda identificadores técnicos de arquivos já enviados pelo Telegram, o tipo ou formato e o título, para reduzir processamento repetido; esses registros podem expirar ou ser invalidados a qualquer momento.</p><p>Fora desse cache técnico, os registros persistentes são somente os dados operacionais limitados na seção 2. A cota diária é renovada à meia-noite (UTC−3).</p></section>
 
-          <section id="baselegal" class="section">
-            <h3 style="margin:18px 0 8px;font-size:16px;letter-spacing:.1px">4. Base legal (LGPD)</h3>
-            <p>
-              O Tokly fundamenta o tratamento de dados, quando aplicável, em bases legais previstas na LGPD,
-              como <b>execução de serviço</b> (para processar sua solicitação) e <b>legítimo interesse</b> (para segurança e prevenção de abuso),
-              sempre observando direitos e liberdades do titular.
-            </p>
-          </section>
+      <section id="infraestrutura"><h2>5. Telegram, infraestrutura e segurança</h2><p>A conversa e a entrega passam pela infraestrutura do Telegram, sujeita às políticas próprias dessa plataforma. O processamento também pode envolver provedores de hospedagem e rede que atuam para manter o serviço disponível. Aplicamos acesso restrito, minimização de dados, segregação de configurações e monitoramento técnico. Nenhum sistema é totalmente imune a incidentes, mas adotamos medidas proporcionais ao risco e agimos para conter problemas identificados.</p></section>
 
-          <section id="armazenamento" class="section">
-            <h3 style="margin:18px 0 8px;font-size:16px;letter-spacing:.1px">5. Armazenamento e retenção</h3>
-            <ul>
-              <li>Não armazenamos permanentemente os vídeos ou links enviados, salvo necessidade técnica temporária durante o processamento.</li>
-              <li>Registros técnicos (logs) podem ser mantidos por período limitado para auditoria, segurança e correção de falhas.</li>
-              <li>Quando não forem mais necessários, os dados são descartados de forma adequada.</li>
-            </ul>
-          </section>
+      <section id="direitos"><h2>6. Seus direitos pela LGPD</h2><p>Nos limites da Lei Geral de Proteção de Dados, você pode pedir confirmação e acesso, correção, anonimização, bloqueio ou eliminação de dados inadequados, portabilidade quando aplicável, informação sobre compartilhamentos, oposição e revisão de decisões automatizadas. Também pode solicitar esclarecimentos sobre as bases usadas.</p><p>Para localizar um registro do bot, poderemos pedir seu ID numérico do Telegram e uma confirmação razoável de identidade. Responderemos em prazo compatível com a legislação; alguns registros podem ser mantidos quando houver obrigação legal, prevenção de fraude ou defesa de direitos.</p></section>
 
-          <section id="compartilhamento" class="section">
-            <h3 style="margin:18px 0 8px;font-size:16px;letter-spacing:.1px">6. Compartilhamento</h3>
-            <p>
-              O Tokly <b>não vende</b>, <b>não aluga</b> e <b>não compartilha</b> dados pessoais com terceiros para fins publicitários.
-              Poderá haver uso de infraestrutura técnica (ex.: servidores) para operação do bot — limitada ao necessário para prestar o serviço.
-            </p>
-          </section>
+      <section id="menores"><h2>7. Menores de idade</h2><p>O Tokly não é direcionado a crianças. Menores devem usar o serviço com conhecimento e supervisão de responsável legal, respeitando a idade mínima e as regras do Telegram e do TikTok. Se identificarmos tratamento indevido de dados de criança ou adolescente, poderemos eliminar ou restringir os registros relacionados.</p></section>
 
-          <section id="seguranca" class="section">
-            <h3 style="margin:18px 0 8px;font-size:16px;letter-spacing:.1px">7. Segurança</h3>
-            <p>
-              Adotamos medidas técnicas e organizacionais razoáveis para proteger informações contra acesso não autorizado,
-              uso indevido, alteração, divulgação ou destruição. Nenhum sistema é 100% imune, mas trabalhamos para manter o padrão
-              de segurança compatível com o serviço.
-            </p>
-          </section>
+      <section id="alteracoes"><h2>8. Atualizações desta política</h2><p>Esta política pode mudar para refletir ajustes no serviço, na infraestrutura ou na legislação. A data no topo indica a versão vigente. Mudanças relevantes serão apresentadas neste endereço.</p></section>
 
-          <section id="direitos" class="section">
-            <h3 style="margin:18px 0 8px;font-size:16px;letter-spacing:.1px">8. Direitos do titular (LGPD)</h3>
-            <p>Nos termos da LGPD, você pode solicitar:</p>
-            <ul>
-              <li>Confirmação da existência de tratamento;</li>
-              <li>Acesso, correção e/ou atualização de dados;</li>
-              <li>Anonimização, bloqueio ou eliminação de dados desnecessários;</li>
-              <li>Informações sobre uso e retenção, quando aplicável.</li>
-            </ul>
-          </section>
+      <section id="contato" class="legal-contact"><h2>9. Contato</h2><p>Para dúvidas ou solicitações de privacidade, escreva para <a href="mailto:contatojrconceicao@gmail.com">contatojrconceicao@gmail.com</a> ou fale com <strong>@bartnovaks2</strong> no Telegram.</p></section>
+    </main>
 
-          <section id="contato" class="section">
-            <h3 style="margin:18px 0 8px;font-size:16px;letter-spacing:.1px">9. Contato do controlador</h3>
-            <p>Para solicitações relacionadas à privacidade e à LGPD, entre em contato por:</p>
-            <ul>
-              <li><b>E-mail:</b> contatojrconceicao@gmail.com</li>
-              <li><b>Telegram:</b> @bartnovaks2</li>
-            </ul>
-          </section>
-
-          <section id="alteracoes" class="section">
-            <h3 style="margin:18px 0 8px;font-size:16px;letter-spacing:.1px">10. Alterações desta política</h3>
-            <p>
-              Podemos atualizar esta Política periodicamente. A versão vigente será sempre publicada nesta página,
-              com a data de atualização indicada no topo.
-            </p>
-          </section>
-        </div>
-      </main>
-
-      <aside class="card" aria-label="Navegação rápida">
-        <div class="head">
-          <h2>Navegação rápida</h2>
-          <span class="tag">/privacy</span>
-        </div>
-        <div class="body toc">
-          <a href="#escopo">Escopo <small>1</small></a>
-          <a href="#dados">Dados tratados <small>2</small></a>
-          <a href="#finalidade">Finalidade <small>3</small></a>
-          <a href="#baselegal">Base legal (LGPD) <small>4</small></a>
-          <a href="#armazenamento">Armazenamento <small>5</small></a>
-          <a href="#compartilhamento">Compartilhamento <small>6</small></a>
-          <a href="#seguranca">Segurança <small>7</small></a>
-          <a href="#direitos">Direitos LGPD <small>8</small></a>
-          <a href="#contato">Contato <small>9</small></a>
-          <a href="#alteracoes">Alterações <small>10</small></a>
-
-          <div class="note" style="margin-top:14px">
-            Para regras de uso, consulte <b>/terms</b>. Para falar com o suporte, acesse <b>@bartnovaks2</b>.
-          </div>
-        </div>
-      </aside>
-    </div>
-
-    <footer class="footer">
-      <div>© <span id="y"></span> Tokly. Todos os direitos reservados.</div>
-      <div>
-        <a href="/">Início</a>
-        <span style="opacity:.45"> • </span>
-        <a href="/terms">Termos</a>
-      </div>
-    </footer>
-  </div>
-
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
-</body>
+    <footer class="site-footer"><div class="container footer-bottom"><span>© 2026 Tokly</span><span><a href="../">Início</a> · <a href="../terms/">Termos de uso</a> · <a href="https://t.me/toklyappbot" target="_blank" rel="noopener noreferrer">Abrir o bot</a></span></div></footer>
+  </body>
 </html>

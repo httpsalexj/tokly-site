@@ -1,274 +1,55 @@
 <!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Termos de Uso do Tokly — Bot de download de vídeos do TikTok no Telegram." />
-  <title>Termos de Uso — Tokly</title>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#08111f">
+    <meta name="description" content="Conheça as condições de uso, limites operacionais e responsabilidades aplicáveis ao site e ao bot Tokly.">
+    <meta name="robots" content="index, follow">
+    <title>Termos de Uso — Tokly</title>
+    <link rel="canonical" href="https://toklybot.netlify.app/terms/">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="../site.webmanifest">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="Tokly">
+    <meta property="og:title" content="Termos de Uso — Tokly">
+    <meta property="og:description" content="Regras, limites e responsabilidades para usar o Tokly.">
+    <meta property="og:url" content="https://toklybot.netlify.app/terms/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Termos de Uso — Tokly">
+    <meta name="twitter:description" content="Condições claras para usar o Tokly pelo Telegram.">
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <div class="page-glow" aria-hidden="true"></div>
+    <header class="site-header"><div class="container header-inner">
+      <a class="brand" href="../" aria-label="Tokly, página inicial"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M12.3 10.1 9.7 12.7a5.2 5.2 0 0 0 7.4 7.4l2.6-2.6m.1-3.6 2.5-2.5a5.2 5.2 0 0 0-7.4-7.4l-2.5 2.5m-2.5 9.3 12.2-12.2"/></svg><span>tokly</span></a>
+      <nav class="legal-nav" aria-label="Páginas institucionais"><a href="../">Início</a><a href="../privacy/">Privacidade</a></nav>
+      <a class="button button-small" href="https://t.me/toklyappbot" target="_blank" rel="noopener noreferrer">Abrir bot <span aria-hidden="true">↗</span></a>
+    </div></header>
 
-  <style>
-    :root{
-      --bg:#070A12; --text:#EAF0FF; --muted:rgba(234,240,255,.72); --muted2:rgba(234,240,255,.58);
-      --line:rgba(255,255,255,.10); --card:rgba(255,255,255,.04);
-      --a1:#31D3FF; --a2:#8B5CFF; --ok:#32D583; --warn:#FEC84B;
-      --radius:18px; --shadow:0 18px 60px rgba(0,0,0,.45); --max:1080px;
-    }
-    *{box-sizing:border-box} html,body{height:100%}
-    body{
-      margin:0; color:var(--text);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      background:
-        radial-gradient(1200px 800px at 15% 10%, rgba(49,211,255,.18), transparent 60%),
-        radial-gradient(900px 650px at 80% 20%, rgba(139,92,255,.20), transparent 55%),
-        linear-gradient(180deg, var(--bg) 0%, #050712 100%);
-      line-height:1.55;
-    }
-    a{color:inherit}
-    .wrap{max-width:var(--max); margin:0 auto; padding:24px}
-    .topbar{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 0}
-    .brand{display:flex; align-items:center; gap:12px; font-weight:850}
-    .logo{
-      width:38px;height:38px;border-radius:14px;
-      background:
-        radial-gradient(14px 14px at 30% 30%, rgba(255,255,255,.35), transparent 55%),
-        linear-gradient(135deg, var(--a1) 0%, var(--a2) 70%);
-      box-shadow:0 12px 30px rgba(49,211,255,.16);
-    }
-    .tag{
-      font-size:12px;color:rgba(234,240,255,.72);
-      border:1px solid var(--line); background:rgba(255,255,255,.04);
-      padding:6px 10px;border-radius:999px; white-space:nowrap;
-    }
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:10px 14px; border-radius:999px;
-      border:1px solid var(--line); background:rgba(255,255,255,.04);
-      color:var(--text); font-weight:700; font-size:13px; text-decoration:none;
-      transition:transform .15s ease, background .15s ease, border-color .15s ease;
-    }
-    .btn:hover{transform:translateY(-1px); background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.16)}
+    <main id="conteudo" class="legal-shell">
+      <p class="eyebrow">Uso consciente e transparente</p>
+      <h1>Termos de Uso</h1>
+      <p class="legal-intro">Ao usar o site ou conversar com o bot Tokly, você concorda com estas condições. Leia-as antes de enviar um link.</p>
+      <p class="legal-updated">Última atualização: <time datetime="2026-09-18">18 de setembro de 2026</time>.</p>
 
-    .hero{
-      margin-top:16px;
-      border:1px solid var(--line);
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03)),
-        radial-gradient(900px 400px at 12% 0%, rgba(49,211,255,.20), transparent 55%),
-        radial-gradient(900px 400px at 88% 0%, rgba(139,92,255,.22), transparent 55%);
-      border-radius:calc(var(--radius) + 8px);
-      box-shadow:var(--shadow);
-      overflow:hidden;
-    }
-    .hero-in{padding:34px 26px 24px}
-    h1{margin:0 0 10px; font-size:34px; line-height:1.08; letter-spacing:-.6px}
-    .sub{margin:0; color:var(--muted); max-width:75ch; font-size:14.5px}
-    .meta{margin-top:14px; display:flex; flex-wrap:wrap; gap:10px; font-size:12.5px; color:var(--muted2)}
-    .chip{display:inline-flex; align-items:center; gap:8px; padding:8px 10px; border-radius:999px; border:1px solid var(--line); background:rgba(255,255,255,.035)}
-    .dot{width:7px;height:7px;border-radius:99px;background:rgba(255,255,255,.25)}
-    .dot.ok{background:var(--ok)} .dot.warn{background:var(--warn)}
+      <nav class="legal-index" aria-label="Nestes termos"><strong>Nesta página</strong><a href="#servico">Serviço</a><a href="#uso">Uso autorizado</a><a href="#limites">Limites</a><a href="#direitos">Direitos autorais</a><a href="#disponibilidade">Disponibilidade</a><a href="#contato">Contato</a></nav>
 
-    .grid{margin-top:16px; display:grid; grid-template-columns: 1.25fr .75fr; gap:16px}
-    .card{border:1px solid var(--line); background:var(--card); border-radius:var(--radius); overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,.22)}
-    .head{padding:16px 18px; border-bottom:1px solid var(--line); background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); display:flex; justify-content:space-between; gap:12px}
-    .head h2{margin:0; font-size:14px; font-weight:850}
-    .body{padding:18px}
-    p{margin:0 0 12px; color:var(--muted); font-size:14px}
-    p:last-child{margin-bottom:0}
-    ul{margin:10px 0 0; padding-left:18px; color:var(--muted); font-size:14px}
-    li{margin:6px 0}
+      <section id="aceitacao"><h2>1. Aceitação e elegibilidade</h2><p>Você deve ter capacidade legal para aceitar estes termos. Menores só podem usar o Tokly com autorização e supervisão de responsável, respeitando também a idade mínima das plataformas envolvidas. Se não concordar com estas condições, não use o serviço.</p></section>
+      <section id="servico"><h2>2. O que o Tokly oferece</h2><p>O Tokly recebe no Telegram links de vídeos públicos do TikTok e tenta entregar vídeo ou áudio em MP3, conforme a opção disponível. Fotos, lives, perfis, conteúdo privado ou restrito não são suportados. O resultado depende da disponibilidade técnica do conteúdo e das plataformas de terceiros.</p></section>
+      <section id="uso"><h2>3. Uso autorizado</h2><p>Use o Tokly apenas de forma lícita, pessoal e compatível com estes termos. É proibido tentar contornar limites, automatizar solicitações abusivas, interferir na segurança, explorar falhas, sobrecarregar a infraestrutura, distribuir malware ou usar o serviço para violar a lei ou direitos de terceiros.</p><p>Podemos suspender, limitar ou bloquear o acesso em caso de fraude, risco técnico, violação destes termos ou abuso. Essas medidas podem ser preventivas e durar enquanto forem necessárias para proteger usuários e o serviço.</p></section>
+      <section id="limites"><h2>4. Limites operacionais</h2><p>O limite padrão é de <strong>45 MB</strong> por arquivo e de <strong>20 pedidos aceitos por pessoa por dia</strong>. A cota se renova à <strong>meia-noite no fuso UTC−3</strong>. Pedidos recusados antes de serem aceitos podem não consumir a cota. Esses parâmetros podem ser ajustados para segurança, capacidade ou equilíbrio de uso, com comunicação neste site ou pelo bot quando apropriado.</p></section>
+      <section id="direitos"><h2>5. Direitos autorais e conteúdo de terceiros</h2><p>Você é responsável pelos links que envia e pelo modo como utiliza o arquivo recebido. Só solicite, copie, armazene ou compartilhe conteúdo quando tiver autorização ou outra base legal. O Tokly não transfere licenças nem titularidade sobre conteúdo de terceiros e não garante que um uso específico seja permitido.</p><p>Respeite direitos autorais, imagem, privacidade, marcas e as regras do TikTok e do Telegram. O titular pode pedir análise de possível violação pelo contato abaixo, informando material, direito alegado e elementos suficientes para verificação.</p></section>
+      <section id="disponibilidade"><h2>6. Disponibilidade e garantias</h2><p>O serviço é oferecido conforme a disponibilidade, sem garantia de funcionamento contínuo, prazo fixo, remoção de marca d’água, compatibilidade com todo link ou preservação permanente de arquivos. Manutenções, mudanças do TikTok ou Telegram, limites de rede e eventos externos podem causar atraso, falha ou interrupção.</p><p>Na extensão permitida pela legislação, não respondemos por uso indevido, perda indireta, indisponibilidade de terceiros ou conteúdo fornecido por usuários e plataformas externas. Nada nestes termos exclui direitos obrigatórios do consumidor quando aplicáveis.</p></section>
+      <section id="marca"><h2>7. Marca e independência</h2><p>O nome, a identidade e os elementos próprios do Tokly são protegidos e não podem ser apresentados como seus sem autorização. Tokly é um serviço independente e <strong>não é afiliado, patrocinado, operado ou endossado pelo TikTok ou pelo Telegram</strong>. As marcas citadas pertencem aos respectivos titulares.</p></section>
+      <section id="alteracoes"><h2>8. Alterações e encerramento</h2><p>Podemos alterar funções, limites ou estes termos para refletir mudanças legais, técnicas ou operacionais. A versão vigente e sua data ficam disponíveis nesta página. Também podemos interromper o serviço, integral ou parcialmente, preservando obrigações que devam sobreviver.</p></section>
+      <section id="lei"><h2>9. Legislação aplicável</h2><p>Estes termos são interpretados conforme a legislação brasileira. Eventual conflito será tratado pelos canais de contato e, quando necessário, pelo foro competente definido pela legislação aplicável, sem limitar garantias legais do usuário.</p></section>
+      <section id="contato" class="legal-contact"><h2>10. Contato</h2><p>Dúvidas, notificações ou solicitações podem ser enviadas a <a href="mailto:contatojrconceicao@gmail.com">contatojrconceicao@gmail.com</a> ou a <strong>@bartnovaks2</strong> no Telegram. Consulte também a <a href="../privacy/">Política de Privacidade</a>.</p></section>
+    </main>
 
-    .toc a{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:12px 14px; border:1px solid var(--line); border-radius:14px;
-      background:rgba(255,255,255,.03); margin-bottom:10px;
-      color:rgba(234,240,255,.92); font-weight:750; font-size:13.5px; text-decoration:none;
-      transition:transform .15s ease, background .15s ease, border-color .15s ease;
-    }
-    .toc a:hover{transform:translateY(-1px); background:rgba(255,255,255,.05); border-color:rgba(255,255,255,.16)}
-    .toc small{color:var(--muted2); font-weight:700}
-
-    .note{
-      margin-top:12px; padding:12px 14px; border-radius:14px;
-      border:1px solid rgba(49,211,255,.22); background:rgba(49,211,255,.07);
-      color:rgba(234,240,255,.82); font-size:13.5px;
-    }
-    .section{scroll-margin-top:18px; padding-top:2px}
-
-    .footer{
-      margin-top:18px; padding:18px 0 10px; color:var(--muted2); font-size:12.5px;
-      display:flex; flex-wrap:wrap; gap:10px; justify-content:space-between; align-items:center;
-      border-top:1px solid rgba(255,255,255,.08);
-    }
-    .footer a{opacity:.9; text-decoration:underline; text-decoration-color:rgba(255,255,255,.22); color:inherit}
-
-    @media (max-width: 920px){
-      .grid{grid-template-columns:1fr}
-      h1{font-size:30px}
-      .hero-in{padding:28px 20px 22px}
-    }
-  </style>
-</head>
-
-<body>
-  <div class="wrap">
-    <header class="topbar">
-      <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
-        <div>
-          Tokly<br/>
-          <span style="font-size:12px;color:var(--muted2)">Termos de Uso</span>
-        </div>
-      </div>
-
-      <div style="display:flex; gap:10px; align-items:center">
-        <span class="tag">Telegram • TikTok Downloader</span>
-        <a class="btn" href="/">Início</a>
-        <a class="btn" href="/privacy">Privacidade</a>
-      </div>
-    </header>
-
-    <section class="hero">
-      <div class="hero-in">
-        <h1>Termos de Uso — Tokly</h1>
-        <p class="sub">
-          Estes Termos de Uso regulam o acesso e utilização do Tokly (“bot”) no Telegram.
-          Ao utilizar o Tokly, você concorda com estes termos e com a nossa Política de Privacidade.
-        </p>
-
-        <div class="meta">
-          <div class="chip"><span class="dot ok"></span> Uso responsável</div>
-          <div class="chip"><span class="dot warn"></span> Conteúdo de terceiros</div>
-          <div class="chip">Última atualização: <b style="color:rgba(234,240,255,.9)">Março/2026</b></div>
-        </div>
-      </div>
-    </section>
-
-    <div class="grid">
-      <main class="card">
-        <div class="head">
-          <h2>Conteúdo</h2>
-          <span class="tag">Tokly — Download. Pronto.</span>
-        </div>
-
-        <div class="body">
-          <section id="definicoes" class="section">
-            <h3 style="margin:0 0 8px;font-size:16px">1. Definições</h3>
-            <ul>
-              <li><b>Tokly:</b> bot no Telegram que processa links públicos do TikTok enviados pelo usuário.</li>
-              <li><b>Usuário:</b> pessoa que interage com o Tokly no Telegram.</li>
-              <li><b>Conteúdo:</b> mídia de terceiros (ex.: vídeos do TikTok) acessada por meio de link público.</li>
-            </ul>
-          </section>
-
-          <section id="uso" class="section">
-            <h3 style="margin:18px 0 8px;font-size:16px">2. Condições de uso</h3>
-            <p>Você concorda em utilizar o Tokly de forma lícita, responsável e de acordo com estes termos.</p>
-            <ul>
-              <li>Você é responsável pelos links que envia e pelo uso do conteúdo baixado.</li>
-              <li>Você deve respeitar direitos autorais, regras do TikTok e leis aplicáveis.</li>
-              <li>Você não deve utilizar o Tokly para fins ilegais, abusivos ou para violar direitos de terceiros.</li>
-            </ul>
-          </section>
-
-          <section id="terceiros" class="section">
-            <h3 style="margin:18px 0 8px;font-size:16px">3. Conteúdo de terceiros</h3>
-            <p>
-              O Tokly apenas processa links fornecidos pelo usuário. O Tokly não é afiliado ao TikTok e não possui controle
-              sobre conteúdo hospedado por terceiros.
-            </p>
-            <div class="note">
-              Importante: use o Tokly apenas para conteúdos que você tem direito de acessar/baixar (ex.: seus próprios vídeos ou conteúdos autorizados).
-            </div>
-          </section>
-
-          <section id="disponibilidade" class="section">
-            <h3 style="margin:18px 0 8px;font-size:16px">4. Disponibilidade e limitações</h3>
-            <ul>
-              <li>O serviço pode ficar indisponível temporariamente por manutenção, falhas técnicas ou limitações externas.</li>
-              <li>Podemos aplicar limites para evitar abuso (ex.: rate limit).</li>
-              <li>Não garantimos tempo de resposta, compatibilidade com todos os links ou resultados em todos os casos.</li>
-            </ul>
-          </section>
-
-          <section id="privacidade" class="section">
-            <h3 style="margin:18px 0 8px;font-size:16px">5. Privacidade e LGPD</h3>
-            <p>
-              O tratamento de dados pessoais é descrito na nossa
-              <a href="/privacy" style="text-decoration:underline; text-decoration-color:rgba(255,255,255,.25)">Política de Privacidade</a>.
-              O Tokly busca tratar dados no mínimo necessário, em conformidade com a LGPD.
-            </p>
-          </section>
-
-          <section id="responsabilidade" class="section">
-            <h3 style="margin:18px 0 8px;font-size:16px">6. Isenção de responsabilidade</h3>
-            <ul>
-              <li>O Tokly é fornecido “como está”, sem garantias de disponibilidade contínua ou ausência de erros.</li>
-              <li>Não nos responsabilizamos por uso indevido do serviço, nem por violações de direitos de terceiros pelo usuário.</li>
-              <li>Não nos responsabilizamos por perdas decorrentes de falhas externas, bloqueios, alterações de plataformas ou indisponibilidade do TikTok/Telegram.</li>
-            </ul>
-          </section>
-
-          <section id="suspensao" class="section">
-            <h3 style="margin:18px 0 8px;font-size:16px">7. Suspensão e bloqueio</h3>
-            <p>
-              Podemos suspender ou bloquear o acesso ao Tokly em caso de abuso, tentativa de violação de segurança, uso ilícito
-              ou descumprimento destes Termos.
-            </p>
-          </section>
-
-          <section id="alteracoes" class="section">
-            <h3 style="margin:18px 0 8px;font-size:16px">8. Alterações</h3>
-            <p>
-              Podemos atualizar estes Termos periodicamente. A versão vigente ficará disponível nesta página com data de atualização.
-            </p>
-          </section>
-
-          <section id="contato" class="section">
-            <h3 style="margin:18px 0 8px;font-size:16px">9. Contato</h3>
-            <p>Para dúvidas, suporte ou solicitações relacionadas a privacidade/termos:</p>
-            <ul>
-              <li><b>E-mail:</b> contatojrconceicao@gmail.com</li>
-              <li><b>Telegram:</b> @bartnovaks2</li>
-            </ul>
-          </section>
-        </div>
-      </main>
-
-      <aside class="card">
-        <div class="head">
-          <h2>Navegação rápida</h2>
-          <span class="tag">/terms</span>
-        </div>
-
-        <div class="body toc">
-          <a href="#definicoes">Definições <small>1</small></a>
-          <a href="#uso">Condições de uso <small>2</small></a>
-          <a href="#terceiros">Conteúdo de terceiros <small>3</small></a>
-          <a href="#disponibilidade">Disponibilidade <small>4</small></a>
-          <a href="#privacidade">Privacidade/LGPD <small>5</small></a>
-          <a href="#responsabilidade">Responsabilidade <small>6</small></a>
-          <a href="#suspensao">Suspensão <small>7</small></a>
-          <a href="#alteracoes">Alterações <small>8</small></a>
-          <a href="#contato">Contato <small>9</small></a>
-
-          <div class="note" style="margin-top:14px">
-            A Política de Privacidade está disponível em <b>/privacy</b>.
-          </div>
-        </div>
-      </aside>
-    </div>
-
-    <footer class="footer">
-      <div>© <span id="y"></span> Tokly. Todos os direitos reservados.</div>
-      <div>
-        <a href="/">Início</a> <span style="opacity:.45"> • </span>
-        <a href="/privacy">Privacidade</a>
-      </div>
-    </footer>
-  </div>
-
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
-</body>
+    <footer class="site-footer"><div class="container footer-bottom"><span>© 2026 Tokly</span><span><a href="../">Início</a> · <a href="../privacy/">Privacidade</a> · <a href="https://t.me/toklyappbot" target="_blank" rel="noopener noreferrer">Abrir o bot</a></span></div></footer>
+  </body>
 </html>
